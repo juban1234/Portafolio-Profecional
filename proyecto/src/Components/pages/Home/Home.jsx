@@ -1,8 +1,10 @@
+import { Main } from "../../layouts/Main/Main"
+
 
 export const Home = () => {
   return (
     <>
-      <h1> hola </h1>
+      <Main/>
     </>
   )
 }
