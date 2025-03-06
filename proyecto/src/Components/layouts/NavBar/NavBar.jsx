@@ -15,9 +15,29 @@ export const NavBar = () => {
                         route={'/TecnnicalSkill'}
                         content='Tecnicas basicas'
                     />
+                    <ItemNav
+                        route={'/TecnnicalSocial'}
+                        content='Habilidades Sociales'
+                    />
+                    <ItemNav
+                        route={'/EnglishLeve'}
+                        content=' Nivel de Inglés'
+                    />
+                    <ItemNav
+                        route={'/ProfessionalExp'}
+                        content='Experiencia Profesional'
+                    />
+                    <ItemNav
+                        route={'/Studies'}
+                        content=' Estudios'
+                    />
+                    <ItemNav
+                        route={'/SocialNetworks'}
+                        content='Redes Sociales'
+                    />
                     <ItemNav 
-                        route={'/'}
-                        content='home'
+                        route={'*'}
+                        content='defaul'
                     />
                 </ul>
             </nav>
