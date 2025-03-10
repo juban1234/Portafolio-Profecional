@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom';
-import { ItemNav } from '../../UI/ItemNav';
+import { ItemNav } from '../../UI/ItemNav/ItemNav';
 import React, { useState,useEffect } from 'react';
 
 
@@ -39,7 +39,6 @@ export const NavBar = () => {
             <ItemNav route={'/TecnnicalSocial'} content='Habilidades Sociales '  />
             <ItemNav route={'/ProfessionalExp'} content='Experiencia Profesional ' />
             <ItemNav route={'/Studies'} content='Estudios ' />
-            <ItemNav route={'/SocialNetworks'} content='Redes Sociales' />
           </ul>
         )}
 
@@ -49,7 +48,7 @@ export const NavBar = () => {
           <ItemNav route={'/TecnnicalSocial'} content='Habilidades Sociales ' />
           <ItemNav route={'/ProfessionalExp'} content='Experiencia Profesional ' />
           <ItemNav route={'/Studies'} content='Estudios ' />
-          <ItemNav route={'/SocialNetworks'} content='Redes Sociales' />
+
         </ul>
       </div>
     </nav>

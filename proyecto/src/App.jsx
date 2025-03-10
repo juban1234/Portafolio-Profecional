@@ -7,7 +7,8 @@ import { TecnnicalSkill } from './Components/pages/TecnnicalSkill/TecnnicalSkill
 import { TecnnicalSocial } from './Components/pages/TecnnicalSocial/TecnnicalSocial'
 import {ProfessionalExp} from './Components/pages/ProfessionalExp/ProfessionalExp'
 import {Studies} from './Components/pages/Studies/Studies'
-import {SocialNetworks} from './Components/pages/SocialNetworks/SocialNetworks'
+import { NotFound } from './Components/pages/NotFound/NotFound'
+
 
 
 
@@ -25,12 +26,10 @@ export const App = () => {
             <Route path='/TecnnicalSocial' element={<TecnnicalSocial/>}/>
             <Route path='/ProfessionalExp' element={<ProfessionalExp/>}/>
             <Route path='/Studies' element={<Studies/>}/>
-            <Route path='/SocialNetworks' element={<SocialNetworks/>}/>
+            <Route path='*' element={<NotFound/>}/>
 
           </Routes>
         <Footer/>
-
-      
       </>
   )
 }

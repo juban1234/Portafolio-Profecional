@@ -1,6 +1,10 @@
 import { CardInfo } from "../../UI/CardInfo/CardInfo";
+import img1 from "../../assets/image/imagen1.png"
+import img2 from "../../assets/image/Error.png"
 
 export const TecnnicalSkill = () => {
+
+
   return (
 
       <main className="flex-grow min-h-screen flex flex-col items-center p-4">
@@ -11,11 +15,13 @@ export const TecnnicalSkill = () => {
           <CardInfo
             title={'Frontend'}
             content={'React, HTML, CSS, JavaScript, Tailwind CSS.'}
+            images ={[img1,img2]}
           />
           
           <CardInfo
             title={'Control de Versiones'}
             content={'Git, GitHub.'}
+            images={[img1,img2]}
           />
 
           <CardInfo

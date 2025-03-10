@@ -5,7 +5,7 @@ export const ItemNav = ({route,StyleLi,content}) => {
   return (
     <>
         <li className={StyleLi}>
-            <NavLink to={route}> {content} </NavLink>
+            <NavLink  to={route}> {content} </NavLink>
         </li>
     </>
   )
