@@ -2,7 +2,7 @@ import imaHome from "../../assets/image/imagen1.png";
 
 export const Main = () => {
   return (
-    <main className="flex flex-col justify-center items-center min-h-screen bg-gray-100">
+    <main className="flex flex-col justify-center items-center flex-grow min-h-screen bg-gray-100">
       <div className="w-full max-w-4xl p-6">
         <img 
           src={imaHome} 

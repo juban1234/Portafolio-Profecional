@@ -4,6 +4,12 @@ import { Header } from './Components/layouts/Header/Header'
 import { Footer } from './Components/layouts/Footer/Footer'
 import { Home } from './Components/pages/Home/Home'
 import { TecnnicalSkill } from './Components/pages/TecnnicalSkill/TecnnicalSkill'
+import { TecnnicalSocial } from './Components/pages/TecnnicalSocial/TecnnicalSocial'
+import {ProfessionalExp} from './Components/pages/ProfessionalExp/ProfessionalExp'
+import {Studies} from './Components/pages/Studies/Studies'
+import {SocialNetworks} from './Components/pages/SocialNetworks/SocialNetworks'
+
+
 
 
 
@@ -11,14 +17,19 @@ export const App = () => {
 
   return (
       <>
-        <Header/>
+      <Header/>
           <Routes>
 
             <Route path='/' element={<Home/>}/>
             <Route path='/TecnnicalSkill' element={<TecnnicalSkill/>}/>
-            
+            <Route path='/TecnnicalSocial' element={<TecnnicalSocial/>}/>
+            <Route path='/ProfessionalExp' element={<ProfessionalExp/>}/>
+            <Route path='/Studies' element={<Studies/>}/>
+            <Route path='/SocialNetworks' element={<SocialNetworks/>}/>
+
           </Routes>
         <Footer/>
+
       
       </>
   )

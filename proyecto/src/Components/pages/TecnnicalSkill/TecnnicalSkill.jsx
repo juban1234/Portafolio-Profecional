@@ -3,7 +3,7 @@ import { CardInfo } from "../../UI/CardInfo/CardInfo";
 export const TecnnicalSkill = () => {
   return (
     <>
-      <main className="max-h-full flex flex-col flex-wrap">
+      <main className="max-h-full flex flex-col flex-wrap items-center">
         <h1 className="pl-4 text-xl font-semibold mb-4">Conocimientos Técnicos</h1>
 
         {/* Contenedor de tarjetas con grid responsive */}
