@@ -1,27 +1,31 @@
 import { CardInfo } from "../../UI/CardInfo/CardInfo";
-import img1 from "../../assets/image/imagen1.png"
-import img2 from "../../assets/image/Error.png"
+
+const imagePaths = [
+  "../../assets/image/react.png",
+  '../../assets/image/talwind.png',
+  '../../assets/image/lenguajes.jpg',
+  '../../assets/image/imagen1.png'
+];
 
 export const TecnnicalSkill = () => {
 
-
   return (
 
-      <main className="flex-grow min-h-screen flex flex-col items-center p-4">
+      <main className="flex-grow min-h-screen  flex flex-col items-center p-4">
         <h1 className="pl-4 text-xl font-semibold mb-4">Conocimientos Técnicos</h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className=" h-150 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           
           <CardInfo
             title={'Frontend'}
             content={'React, HTML, CSS, JavaScript, Tailwind CSS.'}
-            images ={[img1,img2]}
+            images ={imagePaths.slice(0, 2)}
           />
           
           <CardInfo
             title={'Control de Versiones'}
             content={'Git, GitHub.'}
-            images={[img1,img2]}
+
           />
 
           <CardInfo

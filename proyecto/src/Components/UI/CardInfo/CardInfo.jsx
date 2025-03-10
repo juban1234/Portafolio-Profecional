@@ -18,7 +18,7 @@ export const CardInfo = ({ title, content, images = [] }) => {
               key={index}
               src={img}
               alt={`image ${index + 1}`}
-              className="w-full h-auto rounded-lg"
+              className="w-full h-auto rounded-lg object-cover "
             />
           ))}
         </div>
