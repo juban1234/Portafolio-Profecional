@@ -3,7 +3,9 @@
 export const TecnnicalSocial = () => {
   return (
     <>
-    <h1>hoola</h1>
+        <main className="max-h-full flex flex-col flex-wrap items-center">
+            
+        </main>
     </>
   )
 }

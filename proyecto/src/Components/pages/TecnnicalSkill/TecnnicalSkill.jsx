@@ -2,11 +2,10 @@ import { CardInfo } from "../../UI/CardInfo/CardInfo";
 
 export const TecnnicalSkill = () => {
   return (
-    <>
-      <main className="max-h-full flex flex-col flex-wrap items-center">
+
+      <main className="flex-grow min-h-screen flex flex-col items-center p-4">
         <h1 className="pl-4 text-xl font-semibold mb-4">Conocimientos Técnicos</h1>
 
-        {/* Contenedor de tarjetas con grid responsive */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           
           <CardInfo
@@ -36,6 +35,5 @@ export const TecnnicalSkill = () => {
           
         </div>
       </main>
-    </>
   );
 };
