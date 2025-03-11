@@ -2,8 +2,9 @@
 
 export const Studies = () => {
   return (
-    <>
-    <h1>estudios</h1>
-    </>
+
+    <main className="flex-grow min-h-screen flex flex-col items-center p-4">
+      
+    </main>
   )
 }

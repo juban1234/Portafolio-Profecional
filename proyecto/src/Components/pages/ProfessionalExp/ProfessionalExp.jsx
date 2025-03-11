@@ -1,7 +1,7 @@
 
 export const ProfessionalExp = () => {
   return (
-    <main className="max-h-full h-9/10 ">
+    <main className="flex-grow min-h-screen flex flex-col items-center p-4">
       <h1>hola</h1>
     </main>
   )

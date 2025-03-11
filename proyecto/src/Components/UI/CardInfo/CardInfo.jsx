@@ -7,7 +7,7 @@ export const CardInfo = ({ title, content, images = [] }) => {
       </div>
 
       <div className="px-6 py-4">
-        <p className="text-gray-600 text-base">{content}</p>
+        <p className="text-gray-600 text-base" dangerouslySetInnerHTML={{ __html: content}}/>
       </div>
 
       <div className="px-6 py-4">

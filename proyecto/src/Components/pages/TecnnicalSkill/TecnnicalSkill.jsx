@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { CardInfo } from "../../UI/CardInfo/CardInfo";
 
-// Definir las rutas de las imágenes
+
 const imagePaths = [
   import("../../assets/image/talwind.jpg"),
   import("../../assets/image/react.png"),
-  import("../../assets/image/lenguajes_1.png")
+  import("../../assets/image/lenguajes_1.png"),
+  import("../../assets/image/git_github.png")
 
 ];
 
@@ -38,17 +39,19 @@ export const TecnnicalSkill = () => {
         <CardInfo
           title={'Control de Versiones'}
           content={'Git, GitHub.'}
-          images={images.slice(0, 3)} 
+          images={images.slice(3, 4)} 
         />
 
         <CardInfo
           title={'Educación y Liderazgo'}
-          content={'Lógica de programación, preparación y conducción de conferencias. <br /> hola'}
+          content={'Lógica de programación, preparación y conducción de conferencias.'}
         />
 
         <CardInfo
           title={'Desarrollo Web'}
-          content={`Conocimiento básico sobre cómo consumir servicios externos a través de APIs RESTful.`}
+          content={`Conocimiento básico sobre cómo consumir servicios externos a través de APIs RESTful. <br /> <br />
+            Aplicaciones del lado del cliente: Experiencia básica desarrollando aplicaciones que interactúan con el navegador, incluyendo la manipulación de eventos y la actualización de la UI de manera dinámica.
+            `}
         />
 
         <CardInfo
