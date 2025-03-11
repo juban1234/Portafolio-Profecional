@@ -56,7 +56,7 @@ export const TecnnicalSkill = () => {
 
         <CardInfo
           title={'Nivel de Inglés'}
-          content={'Intermedio, lectura, comprensión y conversación.'}
+          content={'nivel de ingles es de B1'}
         />
         
       </div>

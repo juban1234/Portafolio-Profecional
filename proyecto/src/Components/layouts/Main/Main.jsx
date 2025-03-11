@@ -17,8 +17,7 @@ export const Main = () => {
         
         {/* Descripción adicional (opcional) */}
         <p className="text-center text-gray-600">
-          Desarrollador con experiencia en tecnologías web, enfocado en la creación de aplicaciones modernas y responsivas. 
-          Mi pasión por la programación me impulsa a aprender constantemente y asumir nuevos retos.
+          aprendiz de programador ,sin experiencia , pero con ganas de seguir aprendiendo
         </p>
       </div>
     </main>
