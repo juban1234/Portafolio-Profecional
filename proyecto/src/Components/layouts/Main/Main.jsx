@@ -1,4 +1,4 @@
-import imaHome from "../../assets/image/imagen1.png";
+import imaHome from "../../assets/image/carned.png";
 
 export const Main = () => {
   return (
