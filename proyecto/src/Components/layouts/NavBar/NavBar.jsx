@@ -21,7 +21,7 @@ export const NavBar = () => {
       
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         
-        <div className="text-2xl font-bold tracking-wide text-blue-500">
+        <div className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400 text-center ">
           <h1>Mi Portafolio</h1>
         </div>
 

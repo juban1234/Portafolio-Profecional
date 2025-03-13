@@ -13,6 +13,16 @@ const imagePaths = [
 export const TecnnicalSkill = () => {
   const [images, setImages] = useState([]);
 
+  const Tecnnical = [
+    { title: "Frontend", content: "React, HTML, CSS, JavaScript, Tailwind CSS." ,imag: images.slice(0,3) },
+    { title: "Control de Versiones", content: "Git, GitHub." ,imag: images.slice(3,4)},
+    { title: "Educación y Liderazgo", content: "Lógica de programación, preparación y conducción de conferencias." },
+    { title: "Desarrollo Web'", content: `Conocimiento básico sobre cómo consumir servicios externos a través de APIs RESTful. <br /> <br />
+            Aplicaciones del lado del cliente: Experiencia básica desarrollando aplicaciones que interactúan con el navegador, incluyendo la manipulación de eventos y la actualización de la UI de manera dinámica.
+    ` },
+    { title: "nivel de ingles", content: "mi nivel de ingles es de B1"}
+  ];
+
   useEffect(() => {
 
     Promise.all(imagePaths)
@@ -28,37 +38,15 @@ export const TecnnicalSkill = () => {
     <main className="flex-grow min-h-screen flex flex-col items-center p-4">
       <h1 className="pl-4 text-xl font-semibold mb-4">Conocimientos Técnicos</h1>
 
-      <div className="h-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        
-        <CardInfo
-          title={'Frontend'}
-          content={'React, HTML, CSS, JavaScript, Tailwind CSS.'}
-          images={images.slice(0, 3)} 
-        />
-        
-        <CardInfo
-          title={'Control de Versiones'}
-          content={'Git, GitHub.'}
-          images={images.slice(3, 4)} 
-        />
-
-        <CardInfo
-          title={'Educación y Liderazgo'}
-          content={'Lógica de programación, preparación y conducción de conferencias.'}
-        />
-
-        <CardInfo
-          title={'Desarrollo Web'}
-          content={`Conocimiento básico sobre cómo consumir servicios externos a través de APIs RESTful. <br /> <br />
-            Aplicaciones del lado del cliente: Experiencia básica desarrollando aplicaciones que interactúan con el navegador, incluyendo la manipulación de eventos y la actualización de la UI de manera dinámica.
-            `}
-        />
-
-        <CardInfo
-          title={'Nivel de Inglés'}
-          content={'nivel de ingles es de B1'}
-        />
-        
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {Tecnnical.map((skill, index) => (
+          <CardInfo
+            key={index}
+            title={skill.title}
+            content={skill.content}
+            images={skill.imag}
+          />
+        ))}
       </div>
     </main>
   );
