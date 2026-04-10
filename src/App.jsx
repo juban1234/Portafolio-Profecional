@@ -9,11 +9,6 @@ import {ProfessionalExp} from './Components/pages/ProfessionalExp/ProfessionalEx
 import {Studies} from './Components/pages/Studies/Studies'
 import { NotFound } from './Components/pages/NotFound/NotFound'
 
-
-
-
-
-
 export const App = () => {
 
   return (
