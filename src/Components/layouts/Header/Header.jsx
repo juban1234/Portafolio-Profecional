@@ -2,11 +2,11 @@ import { NavBar } from "../NavBar/NavBar"
 
 
 
-export const Header = () => {
+export const Header = ({ brand, links }) => {
   return (
     <>
       <header>
-        <NavBar></NavBar>
+        <NavBar brand={brand} links={links}></NavBar>
       </header>
     </>
   )

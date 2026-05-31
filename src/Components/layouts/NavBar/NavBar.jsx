@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export const NavBar = () => {
+export const NavBar = ({ brand, links }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('#inicio');
 
@@ -12,15 +12,8 @@ export const NavBar = () => {
     setIsOpen(false);
   };
 
-  const links = [
-    { href: '#inicio', label: 'Inicio' },
-    { href: '#habilidades', label: 'Habilidades' },
-    { href: '#experiencia', label: 'Experiencia' },
-    { href: '#estudios', label: 'Estudios' },
-  ];
-
   useEffect(() => {
-    const sections = links.map(l => document.querySelector(l.href));
+    const sections = links.map((l) => document.querySelector(l.href));
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -33,7 +26,7 @@ export const NavBar = () => {
     );
     sections.forEach((s) => s && observer.observe(s));
     return () => observer.disconnect();
-  }, []);
+  }, [links]);
 
   const linkClass = (href) =>
     `text-sm tracking-wide uppercase transition-all duration-300 ${
@@ -46,7 +39,7 @@ export const NavBar = () => {
     <nav className="bg-neutral-950/90 backdrop-blur-md text-neutral-200 px-4 sm:px-8 py-4 border-b border-neutral-800/50 w-full z-50 fixed top-0 left-0">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <a href="#inicio" className="font-display text-xl font-semibold tracking-wide bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">
-          {/* Tu marca, ej: Bitácora */}
+          {brand}
         </a>
 
         <button
