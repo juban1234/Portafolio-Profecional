@@ -1,31 +1,23 @@
-import { ItemNav } from "../../UI/ItemNav/ItemNav"
-import { FaFacebook,FaGithub } from "react-icons/fa";
-
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 export const Footer = () => {
-    return (
-        <>
-            <footer className="bg-blue-950  w-full h-25 flex flex-row flex-wrap justify-around items-center relative bottom-0 left-0">
-                <p className="text-amber-50">
-                    Desarrollado por: Juan esteban grajales
-                </p>
-                <div className="flex flex-row text-3xl">
-                <ItemNav
-                    StyleLi={"list-none pl-2 fas fa-heart text-cyan-500"}
-                    content={<FaGithub />}
-                    route={"https://github.com/juban1234/Portafolio-Profecional.git"}
-                />
-                
-                <ItemNav
-                    StyleLi={" list-none pl-2 fas fa-heart text-cyan-500"}
-                    content={<FaFacebook />}
-                    route={"https://www.facebook.com/"}
-                />
-                
-                </div>
-
-                
-            </footer>
-        </>
-    )
-}
+  return (
+    <footer className="relative bg-neutral-950 w-full py-12 flex flex-col items-center gap-6 border-t border-neutral-800/50">
+      <div className="absolute inset-0 bg-gradient-to-t from-blue-950/10 to-transparent pointer-events-none" />
+      <div className="relative z-10 flex flex-col items-center gap-6">
+        <p className="text-neutral-500 text-sm tracking-widest uppercase">
+          {/* Tu nombre aquí */}
+        </p>
+        <div className="w-8 h-px bg-gradient-to-r from-blue-600 to-violet-600" />
+        <div className="flex flex-row text-xl gap-8">
+          <a href="https://github.com/juban1234?tab=repositories" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-violet-400 transition-all duration-300 hover:-translate-y-0.5">
+            <FaGithub />
+          </a>
+          <a href="https://www.linkedin.com/in/juan-esteban-grajales-mesa-12276a356" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-blue-400 transition-all duration-300 hover:-translate-y-0.5">
+            <FaLinkedin />
+          </a>
+        </div>
+      </div>
+    </footer>
+  );
+};

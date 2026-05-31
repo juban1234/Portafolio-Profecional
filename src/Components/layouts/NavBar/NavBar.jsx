@@ -1,59 +1,79 @@
-import { useLocation } from 'react-router-dom';
-import { ItemNav } from '../../UI/ItemNav/ItemNav';
-import React, { useState,useEffect } from 'react';
-
+import { useState, useEffect } from 'react';
 
 export const NavBar = () => {
-
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
+  const [activeSection, setActiveSection] = useState('#inicio');
 
   const toggMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  useEffect(() =>{
-    setIsOpen(false)
-  },[location]);
+  const handleClick = () => {
+    setIsOpen(false);
+  };
+
+  const links = [
+    { href: '#inicio', label: 'Inicio' },
+    { href: '#habilidades', label: 'Habilidades' },
+    { href: '#experiencia', label: 'Experiencia' },
+    { href: '#estudios', label: 'Estudios' },
+  ];
+
+  useEffect(() => {
+    const sections = links.map(l => document.querySelector(l.href));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection('#' + entry.target.id);
+          }
+        });
+      },
+      { rootMargin: '-40% 0px -60% 0px' }
+    );
+    sections.forEach((s) => s && observer.observe(s));
+    return () => observer.disconnect();
+  }, []);
+
+  const linkClass = (href) =>
+    `text-sm tracking-wide uppercase transition-all duration-300 ${
+      activeSection === href
+        ? 'text-violet-400 border-b border-violet-400 pb-1'
+        : 'text-neutral-400 hover:text-white'
+    }`;
 
   return (
-    <nav className="bg-gray-900 text-white p-4 shadow-md  w-full z-50 ">
-      
+    <nav className="bg-neutral-950/90 backdrop-blur-md text-neutral-200 px-4 sm:px-8 py-4 border-b border-neutral-800/50 w-full z-50 fixed top-0 left-0">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        
-        <div className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400 text-center ">
-          <h1>Mi Portafolio</h1>
-        </div>
+        <a href="#inicio" className="font-display text-xl font-semibold tracking-wide bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">
+          {/* Tu marca, ej: Bitácora */}
+        </a>
 
         <button
           onClick={toggMenu}
-          className="sm:hidden bg-blue-600 text-black py-2 px-4 rounded-full hover:bg-blue-500 transition duration-300 ease-in-out"
+          className="sm:hidden border border-neutral-700 text-neutral-300 py-2 px-4 rounded-lg hover:border-violet-500 hover:text-violet-400 transition-all duration-300 text-sm tracking-wide"
         >
           {isOpen ? 'Cerrar' : 'Menú'}
         </button>
 
         {isOpen && (
-          <ul className="sm:hidden absolute top-16 left-0 right-0 bg-gray-800 py-4 px-6 rounded-b-lg shadow-lg flex flex-col space-y-4 mt-2">
-            <ItemNav route={'/'} content='Home '  />
-            <ItemNav route={'/TecnnicalSkill'} content='Técnicas Básicas ' />
-            <ItemNav route={'/TecnnicalSocial'} content='Habilidades Sociales '  />
-            <ItemNav route={'/ProfessionalExp'} content='Experiencia Profesional ' />
-            <ItemNav route={'/Studies'} content='Estudios ' />
+          <ul className="sm:hidden absolute top-14 left-0 right-0 bg-neutral-950/95 backdrop-blur-md py-6 px-8 border-b border-neutral-800/50 flex flex-col space-y-5">
+            {links.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} onClick={handleClick} className={linkClass(link.href)}>{link.label}</a>
+              </li>
+            ))}
           </ul>
         )}
 
-        <ul className="hidden sm:flex space-x-8 font-extralight">
-          <ItemNav route={'/'} content='Home ' />
-          <ItemNav route={'/TecnnicalSkill'} content='Técnicas Básicas ' />
-          <ItemNav route={'/TecnnicalSocial'} content='Habilidades Sociales ' />
-          <ItemNav route={'/ProfessionalExp'} content='Experiencia Profesional ' />
-          <ItemNav route={'/Studies'} content='Estudios ' />
-
+        <ul className="hidden sm:flex space-x-10">
+          {links.map((link) => (
+            <li key={link.href}>
+              <a href={link.href} className={linkClass(link.href)}>{link.label}</a>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>
   );
 };
-
-
-
